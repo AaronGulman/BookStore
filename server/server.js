@@ -7,13 +7,6 @@ const server = express();
 const PORT = process.env.PORT || 5050;
 
 server.use(cors()); // by default allows all origins with default of cors(*)
-server.use(
-  cors({
-    origin: "http://localhost:5050",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-type"],
-  })
-);
 
 server.use(express.json());
 server.use("/books", books);
