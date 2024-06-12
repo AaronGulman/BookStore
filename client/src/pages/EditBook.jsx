@@ -21,7 +21,7 @@ const EditBook = () => {
       .get(`http://localhost:5050/books/${id}`)
       .then((res) => {
         setAuthor(res.data.author);
-        setPubYear(res.data.pubYear);
+        setPubYear(res.data.pubYear.toString());
         setPage(res.data.page);
         setTitle(res.data.title);
         enqueueSnackbar("Editing - Success!", { variant: "success" });
@@ -32,7 +32,7 @@ const EditBook = () => {
         enqueueSnackbar("Error", { variant: "error" });
         console.error(err);
       });
-  }, []);
+  }, [id, enqueueSnackbar]);
 
   const handleEditBook = () => {
     // Validate the data before sending
@@ -54,7 +54,7 @@ const EditBook = () => {
       title,
       author,
       page: parseInt(page, 10),
-      pubYear: new Date(`${pubYear}-01-01`),
+      pubYear: parsedYear,
     };
 
     setLoading(true);

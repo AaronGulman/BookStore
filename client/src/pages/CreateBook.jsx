@@ -34,7 +34,7 @@ const CreateBook = () => {
       title,
       author,
       page: parseInt(page, 10),
-      pubYear: new Date(`${pubYear}-01-01`),
+      pubYear: parsedYear,
     };
 
     setLoading(true);
