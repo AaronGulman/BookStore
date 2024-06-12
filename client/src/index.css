@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply bg-dark-bg text-dark-text;
+}
+
+button {
+  @apply bg-dark-primary text-white;
+}
+
+input, select, textarea {
+  @apply bg-dark-card text-dark-text border-dark-border;
+}

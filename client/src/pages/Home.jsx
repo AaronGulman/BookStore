@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Spinner from "../components/Spinner.jsx";
@@ -29,16 +28,16 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="p-4">
-      <div className="flex justify-center items-center gap-x-4">
+    <div className="p-4 dark:bg-dark-bg dark:text-dark-text min-h-screen">
+      <div className="flex justify-center items-center gap-x-4 mb-4">
         <button
-          className="bg-sky-300 hover:bg-sky-600 px-4 py-1 rounded-1g"
+          className="bg-dark-primary hover:bg-dark-secondary px-4 py-1 rounded-lg text-white"
           onClick={() => setShowType("table")}
         >
           Table
         </button>
         <button
-          className="bg-sky-300 hover:bg-sky-600 px-4 py-1 rounded-1g"
+          className="bg-dark-primary hover:bg-dark-secondary px-4 py-1 rounded-lg text-white"
           onClick={() => setShowType("card")}
         >
           Card
@@ -46,7 +45,7 @@ const Home = () => {
       </div>
       <h1 className="text-3xl my-8">Book List</h1>
       <Link to="/books/create">
-        <MdOutlineAddBox className="text-sky-800 text-4xl" />
+        <MdOutlineAddBox className="text-dark-primary text-4xl mb-4" />
       </Link>
       {loading ? (
         <Spinner />
