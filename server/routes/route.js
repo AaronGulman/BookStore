@@ -61,36 +61,6 @@ router.post("/", async (req, res) => {
   }
 });
 
-// router.put('/books/:id' , async (req,res)=>{
-// 	try{
-// 		if(
-// 			!req.body.title||
-// 			!req.body.page||
-// 			!req.body.author||
-// 			!req.body.pubYear
-// 			){
-// 				return res.status(400).send({message: `Fill out all required fields: title,page,author,pubYear`})
-// 			}
-// 			const update = {
-// 				title: req.body.title,
-// 				page: req.body.page,
-// 				author: req.body.author,
-// 				pubYear: req.body.pubYear
-// 			}
-// 			const bookId = req.params.id;
-// 			const result = await Book.findByIdAndUpdate(bookId,update);
-
-// 			if(!result){
-// 				return res.status(404).json({message: 'Book not found'})
-// 			}
-// 			return res.status(200).send({message:"Updated successfully"});
-
-// 				}catch(err){
-// 					console.error(err)
-// 				}
-
-// })
-
 router.put("/:id", async (req, res) => {
   try {
     if (
